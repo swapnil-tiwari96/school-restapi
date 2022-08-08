@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
+
 exports.signUp = (req, res) =>
 {
     User.find({ email: req.body.email })
@@ -26,7 +27,8 @@ exports.signUp = (req, res) =>
                     {
                         const user = new User({
                             email: req.body.email,
-                            password: hash
+                            password: hash,
+                            dateCreate: new Date()
                         });
                         user
                             .save()
@@ -56,7 +58,8 @@ exports.login = (req, res) =>
         .exec()
         .then(user =>
         {
-            if (user.length < 1)
+            console.log(Math.floor((new Date() - user[0].dateCreate) / (1000 * 60 * 60 * 24)));
+            if (user.length < 1 || Math.floor((new Date() - user[0].dateCreate) / (1000 * 60 * 60 * 24)) > 30)
             {
                 return res.status(401).json({
                     message: "Auth failed"
