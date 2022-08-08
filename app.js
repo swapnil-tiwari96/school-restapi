@@ -17,10 +17,11 @@ app.use(express.json());
 // Routes
 const usersRoutes = require('./routes/users');
 const studentRoutes = require('./routes/students');
+const classRoutes = require('./routes/class');
 
 app.use('/users', usersRoutes);
 app.use('/students', studentRoutes);
-
+app.use('/class', classRoutes);
 
 // Error Handling
 app.use((req, res, next) =>
