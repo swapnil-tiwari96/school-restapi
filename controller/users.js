@@ -30,8 +30,7 @@ exports.signUp = (req, res) =>
                             password: hash,
                             dateCreate: new Date()
                         });
-                        user
-                            .save()
+                        user.save()
                             .then(result =>
                             {
                                 console.log(result);
