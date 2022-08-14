@@ -28,7 +28,7 @@ exports.getAll = (req, res) =>
 
 exports.getOne = (req, res) =>
 {
-    find({
+    Classes.find({
         'name.students.subject': "Physics"
     }, function (err, system)
     {
