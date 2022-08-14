@@ -21,7 +21,7 @@ exports.addStudent = (req, res) =>
 exports.getAll = (req, res) =>
 {
     Classes.find()
-        .populate('')
+        .populate('students')
         .then(result => res.send(result))
         .catch(err => res.send(err))
 }
