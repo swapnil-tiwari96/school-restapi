@@ -33,7 +33,11 @@ exports.getOne = (req, res) =>
     }, function (err, system)
     {
         if (err) { console.log(err); }
-        else { console.log(system); }
+        else
+        {
+            res.send(system)
+            console.log(system);
+        }
     });
 }
 

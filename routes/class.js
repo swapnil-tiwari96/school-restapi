@@ -7,4 +7,6 @@ router.get('/', ClassController.getAll);
 
 router.post('/', checkAuth, ClassController.addStudent);
 
+router.get('/getOne', ClassController.getOne)
+
 module.exports = router;
