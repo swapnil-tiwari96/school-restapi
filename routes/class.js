@@ -5,6 +5,6 @@ const ClassController = require('../controller/class');
 
 router.get('/', ClassController.getAll);
 
-router.post('/', ClassController.addStudent);
+router.post('/', checkAuth, ClassController.addStudent);
 
 module.exports = router;

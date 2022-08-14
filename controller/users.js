@@ -79,7 +79,7 @@ exports.login = (req, res) =>
                             email: user[0].email,
                             userId: user[0]._id
                         },
-                        "secret",
+                        "secret", //should be saved in an .env file
                         {
                             expiresIn: "1h"
                         }

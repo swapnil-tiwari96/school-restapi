@@ -6,7 +6,7 @@ const classSchema = mongoose.Schema({
         required: true
     },
     name: [{
-        year: Number, //chnage it to date later
+        year: Number, //change it to date later
         class_teacher: String,
         subject_list: Array,
         students:
